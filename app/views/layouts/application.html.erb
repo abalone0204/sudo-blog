@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sudo-Blog <%= @name %></title>
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="materialize.css">
+  <link rel="stylesheet" href="font-awesome.css">
+  <script src="jquery.min.js"></script>
+  <script src="materialize.min.js"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="fullpage clearfix">
+  <header class="kai-header">
+      <nav>
+          <div class="nav-wrapper">
+              <a href="/" class="brand-logo center logo-box"><span>Sudo-blog</span></a>
+              <ul class="right hide-on-small-only">
+                  <li><%= link_to '首頁', root_path %></li>
+                  <li><%= link_to '關於', about_path %></a></li>
+                  <li><%= link_to '新增文章', new_post_path %></li>
+              </ul>
+              <ul class="left">
+                  <li>
+                      <a href="#" id="open-menu" class="btn bg-color cmn-toggle-switch cmn-toggle-switch__htla active hide-on-large-only">
+                          <span>toggle menu</span>
+                      </a>
+                  </li>
+              </ul>
+
+          </div>
+      </nav>
+  </header>
+  <div class="l-menu hide-on-small-only z-depth-2">
+      <div id="1" class="user-info">
+          <div class="user-info-img">
+              <a href=""><%= image_tag 'profile.jpg' %></a>
+          </div>
+      </div>
+      <ul class="l-menu-content">
+          <li><a href="<%= root_path %>">文章列表</a></li>
+          <li><a href="articlelist.html">收藏文章</a></li>
+      </ul>
+      <ul class="l-menu-content">
+          <li><%= link_to '關於sudo', about_path %></li>
+          <li><%= link_to '個人檔案', profile_path %></li>
+      </ul>
+  </div>
+  <div class="main-container">
+    <div class="container">
+      <%= yield %>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

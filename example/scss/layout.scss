@@ -1,0 +1,346 @@
+@import "component/variable";
+@import "component/prefixer";
+@import "component/animation";
+@import "component/article";
+@import "component/cards";
+@import "component/image";
+@import "component/event-box";
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+/***********************
+	  BodySetting
+ **********************/
+.fullpage{
+	padding-top: $header-height;
+	background-color: #fdfdfd;
+}
+
+#gotop{
+	position:fixed;
+	display: none;
+	bottom:5%;
+	right:5%;
+	z-index:999;
+	background-color: $main-color;
+}
+/*--- header ---*/
+.kai-header{
+	nav{
+		position: fixed;
+		z-index:9999;
+		float:none;
+		left:0;
+		top:0;
+		line-height: $header-height;
+		height:$header-height;
+		width: 100%; 
+		@include gradient($header-color,$header-color,50%);
+	}
+}
+
+.logo-box{
+	font-family: 'Pacifico', cursive;
+	i{
+		display: inline!important;
+	}
+}
+
+/******************
+	LeftMenu
+*******************/
+.l-menu{
+	position:fixed;
+	z-index: 500;
+	left:0;
+	top:0;
+	padding-top: $header-height;
+	width: $l-menu-width;
+	height:100%;
+	background-color: #efefef;
+
+	a{
+			display: block;
+			font-size: 1.1rem;
+			color:inherit;
+		}
+	.user-info{
+		&-img{
+			padding:10px;
+			text-align: center;
+			border-bottom: 1px solid $br-color;
+			img{
+				max-width: 50%;
+				@include border-radius(50%);
+				transition:0.3s all ease;
+				&:hover{
+					@extend %hover-scale;
+				}
+			}
+
+		}
+	}
+	.media-link{
+		margin:10px 0;
+		padding: 0 10px;
+		text-align: center;
+
+		li{
+			display: inline-block;
+			height:1.5em;
+			width:1.5em;
+			padding:3px;
+			margin-right: 10px;
+			text-align: center;
+			font-size: 1.5em;
+			background-color: #aaa;
+			@include border-radius(50%);
+			transition:0.5s all ease;
+			&:hover{
+				background-color: $link-color;
+			}
+
+		}
+	}
+
+	&-content{
+		li{
+			transition:0.3s all ease;
+			&:hover{
+				@extend %hover;
+			}
+			a{
+				display: block;
+			}
+		}
+		
+		a{
+			display: inline-block;
+			padding:0 10px;
+			color:$menu-color;
+			line-height: 2.5em;
+			transition:0.5s all ease;
+		}
+
+	}
+
+}
+
+
+
+/********************
+	MainContainer
+********************/
+.main-container{
+	padding-left: $l-menu-width;
+	width: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .main-container{
+    	padding-left: 0;
+    }
+}
+.heading{
+		margin: 15px 0;
+		text-align: center;
+		border-bottom: 1px solid $br-color;
+	}
+	.title{
+		font-size: 1.5em;
+		border-bottom: 4px solid $main-color;
+	}
+
+	.sub-title{
+		@extend .title;
+		font-size:1.2em;
+	}
+.content-container{
+	color:$font-color;
+	i{
+		color:$card-blue;
+	}
+	.heading{
+		margin: 15px 0;
+		text-align: center;
+		border-bottom: 1px solid $br-color;
+	}
+	.title{
+		font-size: 1.5em;
+		border-bottom: 4px solid $main-color;
+	}
+
+	.sub-title{
+		@extend .title;
+		font-size:1.2em;
+	}
+}
+
+.secondary-container{
+	@extend .content-container;
+	text-align: center;
+}
+
+.sub-title{
+		font-size:1.2em;
+		border-bottom: 2px solid $main-color;
+	}
+/****************
+	FutherBox
+*****************/
+.futher-box{
+	font-size:16px;
+	a{
+		display: block;
+		color:$font-color;
+		transition:0.3s all ease;
+		&:hover{
+			@extend %hover;
+		}
+	}
+	
+	li{
+		hr{
+			height:3px;
+			width:100%;
+			float:left;
+			border:none;
+			background-color: $main-color;
+		}
+		margin-bottom: 1.5em;
+	}
+}
+/****************
+	Table
+*****************/
+.profile-container{
+	td{
+		line-height: 1.8em;
+		&:first-child{
+			width:20%;
+			@media screen and (max-width:663px) {
+				width:40%;
+			}
+			font-weight: bold;
+			border-right:1px solid $br-color;
+		}
+		padding:15px 10px;
+		
+	}
+	a{
+		display: block;
+	}
+}
+
+.auto-height{
+	height:84px;
+	@media screen and (max-width: 663px) {
+		height:auto!important;
+	}
+}
+
+.talk-table{
+	td,th{
+		padding:5px;
+		font-weight: normal;
+	}
+	th:first-child{
+		width:10%;
+		@media screen and (max-width: 663px) {
+			width:30%;
+		}
+	}
+
+	img{
+		max-width: 100%;
+		height:30%;
+		@include border-radius(50%);
+	}
+}
+
+.modal-width{
+	width:70%;
+	max-height:90%;
+	@media screen and (max-width: 663px) {
+		width:90%;
+	}
+}
+
+
+/****************
+	Slider
+*****************/
+
+.slider {
+	width: 100%;
+	height: 400px;
+	@media screen and (max-width: 600px) {
+	    height:300px;
+	}
+	position: relative;
+	overflow: hidden;
+	.list{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		position: absolute;
+		width: 9999px;
+		height: 100%;
+		li{
+			float: left;
+			height: 100%;
+		}
+		img{
+			width: 100%;
+			height: 100%;
+			border: 0;
+
+		}
+		
+		
+	}
+	
+}
+
+.caption{
+	position:absolute;
+	top:50%;
+	left:50%;
+	z-index: 9999999;
+}
+/*---OpenMenu---*/
+.openmenu{
+	
+}
+
+/*---ModalSetting---*/
+#modal-profile{
+	padding:20px 15px;
+}
+#modal-dairy{
+	@extend #modal-profile;
+}
+
+/*---CityWorkIntroduction---*/
+.intro{
+	font-size:18px;
+	line-height: 2em;
+}
+
+/*******************
+	Footer
+********************/
+.footer-container{
+	@extend .content-container;
+	margin:0;
+	padding:0;
+}
+
+
+
+/*--- clearfix ---*/
+.clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}
+.clearfix:after{clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0}
+* html .clearfix, *:first-child+html .clearfix{zoom:1}
+
+.paddingfix{
+	padding-top: 55px;
+}

@@ -1,0 +1,29 @@
+
+<div class="row">
+  <div class="article-heading">
+    <h4><%= @post.title %></h4>
+    <%= link_to '修改文章', edit_post_path %>
+  </div>
+  <div class="article-content">
+    <%= simple_format(@post.content) %>
+  </div>
+
+</div>
+
+<div class="row">
+     <div class="col s12 m12 l12">
+         <div class="author-box clearfix">
+             <div class="author-box-img"><%= image_tag 'profile.jpg' %></div>
+             <div class="author-box-intro">
+                 <span class="title">作者介紹-<%= @post.author %></span>
+
+                 <p>棲息地在圖書館。喜歡亂寫東西，把自己腦袋中的想法用文字表達出來。 為了不讓時間淡泊回憶創了一個小部落格。寫點日記文、小說心得文、社會感想文、民生議題文來說些什麼。 從一位平凡大學生的觀點看世界。 重度文字控ｘ網路成癮患者ｘ專業啃小說ｘ偽文青。 </p>
+             </div>
+        </div>
+     </div>
+</div>
+
+<div class="comment-area">
+  <h5>目前有<%= @post.comments.count %> 則回應</h5>
+  <%= render @post.comments %>
+  <%= render 'comments/form' %>

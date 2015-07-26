@@ -1,0 +1,17 @@
+<div class="row">
+  <%= form_for @post, :url => {:controller => 'posts', :action => 'create'} do |f| %>
+    <div class="col s12 m12 l12">
+      <div class="row">
+        <%= f.label :title, "文章名稱" %>
+        <%= f.text_field :title, id: "input-field" %>
+        <%= f.label :author, "作者" %>
+        <%= f.text_field :author, id: "input-field" %>
+      </div>
+      <div class="row">
+        <%= f.label :content, "文章內容" %>
+        <%= f.text_area :content, id: "textarea1",class: "materialize-textarea" %>
+      </div>
+    </div>
+    <%= f.submit "送出", class:"btn" %>
+  <% end %>
+</div>

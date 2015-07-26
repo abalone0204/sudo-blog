@@ -1,0 +1,15 @@
+
+<div class="row">
+  <% @posts.each do |post| %>
+    <div class="col s12 m6 l4">
+      <a href="<%= post_path(post) %>">
+        <div class="article-card  card-panel">
+            <div class="article-card-img"><%= image_tag 'profile.jpg' %></div>
+            <div class="article-card-title"><h5> <%= post.title %></h5></div>
+            <div class="article-card-content"><%= post.content %></div>
+            <div class="article-card-author"><span><%= post.author %></span></div>
+        </div>
+      </a>
+    </div>
+  <% end %>
+</div>

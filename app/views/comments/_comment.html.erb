@@ -1,0 +1,14 @@
+<div class="comment clearfix">
+  <div class="comment_content">
+    <p class="comment_name">
+      <strong><%= comment.name %></strong>
+    </p>
+    <p class="comment_body">
+      <%= comment.body %>
+    </p>
+
+    <p><%= link_to 'Delete', [comment.post, comment],
+								  method: :delete,
+								  class: "button",
+								 	data: { confirm: 'Are you sure?' } %></p>
+</div>
