@@ -23,11 +23,14 @@
      </div>
 </div>
 
-<div class="comment-area">
+<div id="comment-area" class="comment-area">
   <h5>目前有<%= @post.comments.count %> 則回應</h5>
-  <ul class="collection clearfix">
+  <ul class="collection clearfix" id="comment-area">
     <%= render @post.comments %>
   </ul>
   <br> <br>
   <%= render 'comments/form' %>
 </div>
+<script type="text/javascript">
+
+</script>

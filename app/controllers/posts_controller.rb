@@ -18,6 +18,12 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comment = @post.comments
+    @contents = @post.comments.all
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def edit

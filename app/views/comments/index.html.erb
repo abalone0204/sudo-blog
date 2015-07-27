@@ -1,0 +1,13 @@
+<% @comments.each do |comment| %>
+<li class="collection-item avatar">
+  <%= image_tag 'profile.jpg', class:'circle' %>
+  <span class="title"><%= comment.name %></span>
+  <p>
+    <%= comment.body %>
+  </p>
+  <%= link_to '刪除', [comment.post, comment],
+                  method: :delete,
+                  class: "secondary-content",
+                   data: { confirm: 'Are you sure?' } %>
+</li>
+<% end %>
