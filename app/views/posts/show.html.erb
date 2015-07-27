@@ -25,6 +25,9 @@
 
 <div class="comment-area">
   <h5>目前有<%= @post.comments.count %> 則回應</h5>
-  <%= render @post.comments %>
+  <ul class="collection clearfix">
+    <%= render @post.comments %>
+  </ul>
+  <br> <br>
   <%= render 'comments/form' %>
 </div>

@@ -1,14 +1,12 @@
-<div class="comment clearfix">
-  <div class="comment_content">
-    <p class="comment_name">
-      <strong><%= comment.name %></strong>
-    </p>
-    <p class="comment_body">
-      <%= comment.body %>
-    </p>
 
-    <p><%= link_to 'Delete', [comment.post, comment],
-								  method: :delete,
-								  class: "button",
-								 	data: { confirm: 'Are you sure?' } %></p>
-</div>
+<li class="collection-item avatar">
+  <%= image_tag 'profile.jpg', class:'circle' %>
+  <span class="title"><%= comment.name %></span>
+  <p>
+    <%= comment.body %>
+  </p>
+  <%= link_to '刪除', [comment.post, comment],
+                  method: :delete,
+                  class: "secondary-content",
+                   data: { confirm: 'Are you sure?' } %>
+</li>
