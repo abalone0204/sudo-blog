@@ -28,9 +28,8 @@ ActiveRecord::Schema.define(version: 20150726034525) do
     t.text     "content"
     t.string   "author"
     t.boolean  "is_public"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "comments_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
